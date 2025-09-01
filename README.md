@@ -1,6 +1,6 @@
 # Spell App
 
-A small web app built using React and TypeScript that lets users browse spells from the ![Dungeons & Dragons 5th Edition API](https://www.dnd5eapi.co/), view spell details, and save their favorite spells.
+A small web app built using React and TypeScript that lets users browse spells from the [Dungeons & Dragons 5th Edition API](https://www.dnd5eapi.co/), view spell details, and save their favorite spells.
 
 ## Features
 
@@ -15,7 +15,7 @@ A small web app built using React and TypeScript that lets users browse spells f
 
 - React and typescript using vite
 - Tailwind css along with Shadcn UI
-- ![D&D 5e API](https://www.dnd5eapi.co/)
+- [D&D 5e API](https://www.dnd5eapi.co/)
 
 ## Getting Started
 
