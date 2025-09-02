@@ -30,3 +30,17 @@ pnpm install
 3. Run locally
 pnpm dev
 ```
+
+## Pages
+
+### Spell list
+
+![Spell list page](src/assets/image.png)
+
+### Spell details
+
+![Spell details page](src/assets/image-1.png)
+
+### Favorite spells
+
+![Favorite spells page](src/assets/image-2.png)
