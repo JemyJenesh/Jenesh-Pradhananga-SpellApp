@@ -4,7 +4,7 @@ import Spell from "@/components/Spell";
 import { getSpells } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 
-export default function SpellList() {
+export default function SpellListPage() {
   const { isPending, error, data } = useQuery({
     queryKey: ["spells"],
     queryFn: getSpells,
@@ -24,7 +24,10 @@ export default function SpellList() {
   }
 
   return (
-    <div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="col-span-full">
+        <h1 className="text-2xl font-bold">Spells</h1>
+      </div>
       {data.results.map((spell) => (
         <Spell key={spell.index} spell={spell} />
       ))}
