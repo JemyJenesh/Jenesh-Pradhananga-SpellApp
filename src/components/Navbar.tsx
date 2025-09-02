@@ -27,8 +27,12 @@ export function Navbar() {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Favorites
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+              active={pathname === "/spells/favorites"}
+            >
+              <Link to="/spells/favorites">Favorites</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>

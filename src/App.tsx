@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import SpellDetailsPage from "@/pages/spells/Details";
+import SpellFavoritesPage from "@/pages/spells/Favorites";
 import SpellListPage from "@/pages/spells/List";
 import { Route, Routes } from "react-router";
 
@@ -11,6 +12,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<SpellListPage />} />
           <Route path="/spells/:id" element={<SpellDetailsPage />} />
+          <Route path="/spells/favorites" element={<SpellFavoritesPage />} />
         </Routes>
       </div>
     </main>

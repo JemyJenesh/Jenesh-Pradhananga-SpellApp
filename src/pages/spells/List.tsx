@@ -41,9 +41,11 @@ export default function SpellListPage() {
       <div className="col-span-full">
         <h1 className="text-2xl font-bold">Spells</h1>
       </div>
-      {data.results.map((spell) => (
-        <Spell key={spell.index} spell={spell} />
-      ))}
+      {data.count < 1 ? (
+        <p>No spells found!</p>
+      ) : (
+        data.results.map((spell) => <Spell key={spell.index} spell={spell} />)
+      )}
     </div>
   );
 }
