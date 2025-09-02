@@ -1,3 +1,4 @@
+import ButtonFavorite from "@/components/ButtonFavorite";
 import ErrorPage from "@/components/ErrorPage";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getSpell } from "@/lib/api";
@@ -34,9 +35,19 @@ export default function SpellDetailsPage() {
 
   return (
     <div className="bg-white border border-gray-300 rounded-lg p-6 text-gray-800">
-      <div className="mb-4">
-        <h2 className="text-2xl font-bold leading-tight">{data.name}</h2>
-        <p className="text-sm text-gray-600">Level: {data.level}</p>
+      <div className="mb-4 flex">
+        <div className="flex-1">
+          <h2 className="text-2xl font-bold leading-tight">{data.name}</h2>
+          <p className="text-sm text-gray-600">Level: {data.level}</p>
+        </div>
+        <ButtonFavorite
+          spell={{
+            index: data.index,
+            level: data.level,
+            name: data.name,
+            url: data.url,
+          }}
+        />
       </div>
 
       <div className="text-sm text-balance">{data.desc[0]}</div>

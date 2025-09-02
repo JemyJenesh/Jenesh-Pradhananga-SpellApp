@@ -3,6 +3,7 @@ import SpellDetailsPage from "@/pages/spells/Details";
 import SpellFavoritesPage from "@/pages/spells/Favorites";
 import SpellListPage from "@/pages/spells/List";
 import { Route, Routes } from "react-router";
+import { Toaster } from "sonner";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/spells/favorites" element={<SpellFavoritesPage />} />
         </Routes>
       </div>
+      <Toaster />
     </main>
   );
 }

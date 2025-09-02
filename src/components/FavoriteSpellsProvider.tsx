@@ -7,6 +7,7 @@ import {
   useState,
   type PropsWithChildren,
 } from "react";
+import { toast } from "sonner";
 
 type Context = {
   favorites: TSpell[];
@@ -23,15 +24,19 @@ export function FavoriteSpellsProvider({ children }: PropsWithChildren) {
 
   const toggleFavorite = (spell: TSpell) => {
     if (favorites.find((fav) => fav.index === spell.index)) {
-      const newFavorites = favorites.filter((fav) => fav.index === spell.index);
+      const newFavorites = favorites.filter((fav) => fav.index !== spell.index);
 
       setFavorites(newFavorites);
       spellLocalStorage.setFavorites(newFavorites);
+
+      toast.success("Removed to favorites.");
     } else {
       const newFavorites = [...favorites, spell];
 
       setFavorites(newFavorites);
       spellLocalStorage.setFavorites(newFavorites);
+
+      toast.success("Added to favorites.");
     }
   };
 
