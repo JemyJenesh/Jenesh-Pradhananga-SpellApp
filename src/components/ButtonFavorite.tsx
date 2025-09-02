@@ -11,6 +11,7 @@ type Props = {
 export default function ButtonFavorite({ spell }: Props) {
   const { favorites, toggleFavorite } = useFavoriteSpells();
   const isFavorite = favorites.find((fav) => fav.index === spell.index);
+  const title = isFavorite ? "Remove from favorites" : "Add to favorites";
 
   const onClick = () => {
     toggleFavorite(spell);
@@ -22,6 +23,7 @@ export default function ButtonFavorite({ spell }: Props) {
       size="icon"
       className="size-8"
       onClick={onClick}
+      title={title}
     >
       <StarIcon
         className={cn({

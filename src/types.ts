@@ -7,6 +7,7 @@ export type TSpell = {
 
 export type Damage = {
   damage_type: DamageType;
+  damage_at_slot_level: Record<string, string>;
 };
 
 export type DamageType = {
@@ -35,7 +36,7 @@ export type TSpellDetail = {
   casting_time: string;
   level: number;
   attack_type: string;
-  damage: Damage;
+  damage?: Damage;
   school: Class;
   classes: Class[];
   subclasses: Class[];
