@@ -5,8 +5,11 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Link, useLocation } from "react-router";
 
 export function Navbar() {
+  const { pathname } = useLocation();
+
   return (
     <div className="sticky top-0 border-b">
       <NavigationMenu
@@ -15,8 +18,12 @@ export function Navbar() {
       >
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
+            <NavigationMenuLink
+              asChild
+              className={navigationMenuTriggerStyle()}
+              active={pathname === "/"}
+            >
+              <Link to="/">Home</Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>

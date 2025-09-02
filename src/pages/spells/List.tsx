@@ -1,6 +1,6 @@
 import ErrorPage from "@/components/ErrorPage";
-import Loader from "@/components/Loader";
 import Spell from "@/components/Spell";
+import { Skeleton } from "@/components/ui/skeleton";
 import { getSpells } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 
@@ -11,7 +11,20 @@ export default function SpellListPage() {
   });
 
   if (isPending) {
-    return <Loader />;
+    return (
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="col-span-full">
+          <h1 className="text-2xl font-bold">Spells</h1>
+        </div>
+
+        <Skeleton className="h-24 w-full rounded" />
+        <Skeleton className="h-24 w-full rounded" />
+        <Skeleton className="h-24 w-full rounded" />
+        <Skeleton className="h-24 w-full rounded" />
+        <Skeleton className="h-24 w-full rounded" />
+        <Skeleton className="h-24 w-full rounded" />
+      </div>
+    );
   }
 
   if (error) {
